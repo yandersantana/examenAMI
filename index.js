@@ -10,7 +10,7 @@ app.set('port', process.env.PORT || 3000);
 
 // Middlewares
 app.use('/',express.static('client',{redirect:false}));
-app.use(cors({origin: 'http://162.212.130.145:4200'}));
+app.use(cors({origin: 'http://162.212.130.145:3000'}));
 app.use(function (req, res, next) {
 
   res.header("Access-Control-Allow-Origin", "*");
