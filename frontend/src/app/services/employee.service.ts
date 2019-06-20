@@ -12,6 +12,7 @@ export class EmployeeService {
   employees: Employee[];
   
   readonly URL_API = 'http://162.212.130.145:3000/api/employees';
+  //readonly URL_API = 'http://localhost:3000/api/employees';
 
   constructor(public http: HttpClient) {
     this.selectedEmployee = new Employee();
