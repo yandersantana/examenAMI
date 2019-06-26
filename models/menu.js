@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const menuSchema = new Schema({
-    idMenu: { type: String, required: true},
-    idRol: { type: String, required: true },
+    idMenu: { type: String, required: false},
+    idRol: { type: String, required: false },
 
 });
 

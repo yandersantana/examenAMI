@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const opcionesMenuSchema = new Schema({
-    idOpcionMenu: { type: String, required: true},
-    idMenu: { type: String, required: true },
-    url: { type: String, required: true },
+    idOpcionMenu: { type: String, required: false},
+    idMenu: { type: String, required: false },
+    url: { type: String, required: false },
    
 });
 

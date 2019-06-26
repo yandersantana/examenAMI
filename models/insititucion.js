@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const institucionSchema = new Schema({
-    idInstitucion: { type: String, required: true},
-    nombre: { type: String, required: true },
-    ruc: { type: String, required: true },
-    descripcion: { type: String, required: true },
-    urlfoto: { type: String, required: true },
+    idInstitucion: { type: String, required: false},
+    nombre: { type: String, required: false },
+    ruc: { type: String, required: false },
+    descripcion: { type: String, required: false },
+    urlfoto: { type: String, required: false },
    
 });
 
