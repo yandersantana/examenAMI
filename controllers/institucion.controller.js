@@ -42,3 +42,5 @@ institucionCtrl.deleteInstitucion = async (req, res, next) => {
     await Institucion.findByIdAndRemove(req.params.id);
     res.json({status: 'Institucion Deleted'});
 };
+
+module.exports = institucionCtrl;

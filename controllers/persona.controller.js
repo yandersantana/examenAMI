@@ -42,3 +42,5 @@ personaCtrl.deletePersona = async (req, res, next) => {
     await Persona.findByIdAndRemove(req.params.id);
     res.json({status: 'Persona Deleted'});
 };
+
+module.exports = personaCtrl;
