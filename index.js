@@ -11,7 +11,7 @@ app.set('port', process.env.PORT || 3000);
 // Middlewares
 app.use('/',express.static('client',{redirect:false}));
 //app.use(cors({origin: 'http://162.212.130.145:3000/api/employees'}));
-app.use(cors({origin: 'http://loaclhost:4200'}));
+app.use(cors({origin: 'http://localhost:4200'}));
 
 app.use(function (req, res, next) {
 
@@ -23,6 +23,13 @@ app.use(express.json());
 
 // Routes
 app.use('/api/employees', require('./routes/employee.routes'));
+app.use('/api/usuarios', require('./routes/usuario.routes'));
+app.use('/api/personas', require('./routes/persona.routes'));
+app.use('/api/institucion', require('./routes/institucion.routes'));
+
+
+
+
 
 
 //starting the server
