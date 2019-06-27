@@ -28,10 +28,6 @@ app.use('/api/employees', require('./routes/employee.routes'));
 //  app.use('/api/institucion', require('./routes/institucion.routes'));
 
 
-
-
-
-
 //starting the server
 
   app.get('*',function(req,res,next){
