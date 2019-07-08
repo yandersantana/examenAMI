@@ -11,12 +11,12 @@ institucionCtrl.createInstitucion = async (req, res, next) => {
     const institucion = new Institucion({
         idInstitucion: req.body.idInstitucion,
         nombre: req.body.nombre,
-	ruc: req.body.ruc,
-	descripcion: req.body.descripcion,
+        ruc: req.body.ruc,
+        descripcion: req.body.descripcion,
         urlfoto: req.body.urlfoto
     });
     await institucion.save();
-    res.json({status: 'Institucion created'});
+    res.json({ status: 'Institucion created' });
 };
 
 institucionCtrl.getInstitucion = async (req, res, next) => {
@@ -28,19 +28,19 @@ institucionCtrl.getInstitucion = async (req, res, next) => {
 institucionCtrl.editInstitucion = async (req, res, next) => {
     const { id } = req.params;
     const institucion = {
-       	idInstitucion: req.body.idInstitucion,
+        idInstitucion: req.body.idInstitucion,
         nombre: req.body.nombre,
-	ruc: req.body.ruc,
-	descripcion: req.body.descripcion,
+        ruc: req.body.ruc,
+        descripcion: req.body.descripcion,
         urlfoto: req.body.urlfoto
     };
-    await Institucion.findByIdAndUpdate(id, {$set: institucion}, {new: true});
-    res.json({status: 'Institucion Updated'});
+    await Institucion.findByIdAndUpdate(id, { $set: institucion }, { new: true });
+    res.json({ status: 'Institucion Updated' });
 };
 
 institucionCtrl.deleteInstitucion = async (req, res, next) => {
     await Institucion.findByIdAndRemove(req.params.id);
-    res.json({status: 'Institucion Deleted'});
+    res.json({ status: 'Institucion Deleted' });
 };
 
 module.exports = institucionCtrl;
