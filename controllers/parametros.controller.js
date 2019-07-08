@@ -17,7 +17,7 @@ parametroCtrl.createParametro = async (req, res, next) => {
     res.json({status: 'Parametro created'});
 };
 
-paranetroCtrl.getParametro = async (req, res, next) => {
+parametroCtrl.getParametro = async (req, res, next) => {
     const { id } = req.params;
     const parametro = await Parametro.findById(id);
     res.json(parametro);
