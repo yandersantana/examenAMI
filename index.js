@@ -9,9 +9,9 @@ var path = require('path')
 app.set('port', process.env.PORT || 3000);
 
 // Middlewares
-//app.use('/',express.static('client',{redirect:false}));
-//app.use(cors({origin: 'http://162.212.130.145:3000/api/employees'}));
-app.use(cors({origin: 'http://localhost:4200'}));
+app.use('/',express.static('client',{redirect:false}));
+app.use(cors({origin: 'http://162.212.130.145:3000/api/employees'}));
+//app.use(cors({origin: 'http://localhost:4200'}));
 
 app.use(function (req, res, next) {
 
@@ -23,16 +23,23 @@ app.use(express.json());
 
 // Routes
 app.use('/api/employees', require('./routes/employee.routes'));
-//app.use('/api/usuarios', require('./routes/usuario.routes'));
+app.use('/api/usuarios', require('./routes/usuario.routes'));
 app.use('/api/personas', require('./routes/persona.routes'));
-app.use('/api/institucion', require('./routes/institucion.routes'));
+app.use('/api/parametros', require('./routes/parametro.routes'));
+app.use('/api/reportes', require('./routes/reporte.routes'));
+app.use('/api/roles', require('./routes/rol.routes'));
+app.use('/api/eventos', require('./routes/evento.routes'));
+app.use('/api/instituciones', require('./routes/institucion.routes'));
+app.use('/api/opcionesmenu', require('./routes/opcionesmenu.routes'));
+
+
 
 
 //starting the server
 
-  // app.get('*',function(req,res,next){
-  //     res.sendFile(path.resolve('client/index.html'))
-  //   });
+  app.get('*',function(req,res,next){
+       res.sendFile(path.resolve('client/index.html'))
+     });
   
 app.listen(app.get('port'), () => {
     console.log(`server on port ${app.get('port')}`);

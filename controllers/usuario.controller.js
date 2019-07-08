@@ -2,7 +2,7 @@ const Usuario = require('../models/usuario');
 
 const usuarioCtrl = {};
 
-usuarioCtrl.getUsuario = async (req, res, next) => {
+usuarioCtrl.getUsuarios = async (req, res, next) => {
     const usuarios = await Usuario.find();
     res.json(usuarios);
 };
