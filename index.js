@@ -10,7 +10,7 @@ app.set('port', process.env.PORT || 3000);
 
 // Middlewares
 app.use('/',express.static('client',{redirect:false}));
-app.use(cors({origin: 'http://162.212.130.145:3000/api/employees'}));
+app.use(cors({origin: 'http://162.212.130.145'}));
 //app.use(cors({origin: 'http://localhost:4200'}));
 
 app.use(function (req, res, next) {
