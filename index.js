@@ -1,9 +1,24 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const router = express.Router(); // rutas primera version
+const propierties = require('./config/propierties'); // propiedades de la base
+const DB =require('./config/db') //url de la base 
 
 const { mongoose } = require('./database');
 var path = require('path')
+
+//instancia base
+DB();
+
+
+//body parse
+const bodyParse=require('body-parser')
+const bodyParseJson=bodyParse.json()
+const bodyParserURLEncoded = bodyParse.urlencoded({extended:true})
+
+
+
 
 // Settings
 app.set('port', process.env.PORT || 3000);
@@ -33,14 +48,28 @@ app.use('/api/instituciones', require('./routes/institucion.routes'));
 app.use('/api/opcionesmenu', require('./routes/opcionesmenu.routes'));
 
 
+//usando el body parse
+app.use(bodyParseJson)
+app.use(bodyParserURLEncoded)
+app.use('/api',router)
+authRoutes(router)
+// router.get('/',(req,res)=>{
+//     res.send("hello")
+// }) //rama home prueba pero ya no sirve por el dist
 
+app.use(router)
 
 //starting the server
 
   app.get('*',function(req,res,next){
        res.sendFile(path.resolve('client/index.html'))
      });
-  
-app.listen(app.get('port'), () => {
-    console.log(`server on port ${app.get('port')}`);
-});
+ 
+     
+//antigua forma de ver puerto por donde corre el node     
+// app.listen(app.get('port'), () => {
+//     console.log(`server on port ${app.get('port')}`);
+// });
+
+// nueva forma de ver el puerto
+app.listen(propierties.PORT,()=>console.log(`server runing on port ${propierties.PORT}`))
