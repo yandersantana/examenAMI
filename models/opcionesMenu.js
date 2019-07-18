@@ -8,4 +8,4 @@ const opcionesMenuSchema = new Schema({
    
 });
 
-module.exports = mongoose.model('OpcionesMenu', opcionesMenuSchema);
+module.exports = mongoose.model('OpcionesMenus', opcionesMenuSchema);
