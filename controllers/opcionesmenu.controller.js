@@ -2,7 +2,7 @@ const Opcionesmenu = require('../models/opcionesMenu');
 
 const OpcionesmenuCtrl = {};
 
-OpcionesmenuCtrl.getOpcionesmenu = async (req, res, next) => {
+OpcionesmenuCtrl.getOpcionesmenus = async (req, res, next) => {
     const opciones = await Opcionesmenu.find();
     res.json(opciones);
 };
