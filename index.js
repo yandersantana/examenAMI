@@ -20,6 +20,16 @@ const bodyParse=require('body-parser')
 const bodyParseJson=bodyParse.json()
 const bodyParserURLEncoded = bodyParse.urlencoded({extended:true})
 
+//usando el body parse
+app.use(bodyParseJson)
+app.use(bodyParserURLEncoded)
+app.use('/api',router)
+authRoutes(router)
+router.get('/',(req,res)=>{
+    res.send("hello")
+}) //rama home prueba pero ya no sirve por el dist
+
+app.use(router)
 
 
 
@@ -51,16 +61,6 @@ app.use('/api/instituciones', require('./routes/institucion.routes'));
 app.use('/api/opcionesmenu', require('./routes/opcionesmenu.routes'));
 
 
-//usando el body parse
-app.use(bodyParseJson)
-app.use(bodyParserURLEncoded)
-app.use('/api',router)
-authRoutes(router)
-// router.get('/',(req,res)=>{
-//     res.send("hello")
-// }) //rama home prueba pero ya no sirve por el dist
-
-app.use(router)
 
 //starting the server
 
