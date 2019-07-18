@@ -9,6 +9,8 @@ OpcionesmenuCtrl.getOpcionesmenus = async (req, res, next) => {
 
 OpcionesmenuCtrl.createOpcionesmenu = async (req, res, next) => {
     const opciones = new Opcionesmenu({
+        idOpcionMenu: req.body.idOpcionMenu,
+        idMenu:req.body.idMenu,
         url: req.body.url
     });
     await opciones.save();
@@ -24,6 +26,8 @@ OpcionesmenuCtrl.getOpcionesmenu = async (req, res, next) => {
 OpcionesmenuCtrl.editOpcionesmenu = async (req, res, next) => {
     const { id } = req.params;
     const opciones = {
+        idOpcionMenu:req.body.idOpcionMenu,
+        idMenu:req.body.idMenu,
         url: req.body.url
     };
     await Opcionesmenu.findByIdAndUpdate(id, {$set: opciones}, {new: true});
