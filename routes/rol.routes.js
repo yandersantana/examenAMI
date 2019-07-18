@@ -3,7 +3,7 @@ const router = express.Router();
 
 const rol = require('../controllers/rol.controller');
 
-router.get('/', rol.getRoles);
+router.get('/', rol.getRols);
 router.post('/', rol.createRol);
 router.get('/:id', rol.getRol);
 router.put('/:id', rol.editRol);

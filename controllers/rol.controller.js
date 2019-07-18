@@ -2,9 +2,9 @@ const Rol = require('../models/rol');
 
 const rolCtrl = {};
 
-rolCtrl.getRoles = async (req, res, next) => {
-    const roles = await Roles.find();
-    res.json(roles);
+rolCtrl.getRols = async (req, res, next) => {
+    const rols = await Rol.find();
+    res.json(rols);
 };
 
 rolCtrl.createRol = async (req, res, next) => {
