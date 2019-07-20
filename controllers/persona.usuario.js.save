@@ -1,0 +1,54 @@
+const Usuario = require('../models/usuario');
+
+const usuarioCtrl = {};
+
+usuarioCtrl.getUsuario = async (req, res, next) => {
+    const personas = await Persona.find();
+    res.json(personas);
+};
+
+usuarioCtrl.createUsuario = async (req, res, next) => {
+    const persona = new Persona({
+        idPersona: req.body.idPersona,
+        idInstitucion: req.body.idInstitucion,
+        cedula: req.body.cedula,
+        nombre: req.body.nombre,
+        apellido: req.body.apellido
+    });
+    await persona.save();
+    res.json({status: 'Persona created'});
+};
+
+usuarioCtrl.getUsuario = async (req, res, next) => {
+    const { id } = req.params;
+    const persona = await Persona.findById(id);
+    res.json(persona);
+};
+
+usuarioCtrl.editUsuario = async (req, res, next) => {
+    const { id } = req.params;
+    const persona = {
+        idPersona: req.body.idPersona,
+        idInstitucion: req.body.idLogros,
+        idRol: req.bo idInstitucion: req.body.idInstitucion,
+        cedula: req.body.cedula,
+        nombre: req.body.nombre,
+        apellido: req.body.apellido
+dy.idRol,
+        idInstitucion: req.body.idInstitucion,
+        nroBotellas: req.body.NroBotellas,
+        saldoTotal: req.body.saldoTotal,
+        urlFoto: req.body.urlFoto,
+        user: req.body.user,
+        password: req.body.password
+    };
+    await Usuario.findByIdAndUpdate(id, {$set: usuario}, {new: true});
+    res.json({status: 'Usuario Updated'});
+};
+
+usuarioCtrl.deleteUsuario = async (req, res, next) => {
+    await Usuario.findByIdAndRemove(req.params.id);
+    res.json({status: 'Usuario Deleted'});
+};
+
+module.exports = usuarioCtrl;
