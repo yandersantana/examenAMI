@@ -8,10 +8,10 @@ mobileAppCtrl.getUsuarioData = async (req, res, next) => {
     const { id } = req.params;
     //const usuario = await Usuario.findById(id);
     //{ 'username': userName }
-    //const usuarioData = await Usuario.find({where: {user:'user'}, select: ['nroBotellas', 'saldoTotal','saldoActual']});
-    const usuarioData = await Usuario.find({ 'user': id });
+    const usuarioData = await Usuario.find({where: {'user':id}, select: ['nroBotellas', 'saldoTotal','saldoActual']});
+    //const usuarioData = await Usuario.find({ 'user': id });
     console.log(usuarioData)
-    res.json({ 'user':usuarioData.id});
+    res.json(usuarioData);
     //res.json(usuarioData.user, usuarioData.nroBotellas, usuarioData.saldoTotal, usuarioData.saldoActual);
 
 
