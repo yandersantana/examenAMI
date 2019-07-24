@@ -8,6 +8,7 @@ const usuarioSchema = new Schema({
     idRol: { type: String, required: false},
     idInstitucion:{type:String ,required:false},
     NroBotellas:{type:Number,required:false},
+    saldoActual:{type:Number,required:false},
     saldoTotal:{type:Number,required:false},
     Urlfoto:{type:String,required:false},
     user:{type:String,required:false},
