@@ -10,7 +10,7 @@ usuarioCtrl.getUsuarios = async (req, res, next) => {
 usuarioCtrl.createUsuario = async (req, res, next) => {
     const usuario = new Usuario({
         idPersona: req.body.idPersona,
-        idLogro: req.body.idLogros,
+        idLogros: req.body.idLogros,
         idRol: req.body.idRol,
         idInstitucion: req.body.idInstitucion,
         NroBotellas: req.body.NroBotellas,
@@ -35,7 +35,7 @@ usuarioCtrl.editUsuario = async (req, res, next) => {
     const usuario = {
 
         idPersona: req.body.idPersona,
-        idLogro: req.body.idLogros,
+        idLogros: req.body.idLogros,
         idRol: req.body.idRol,
         idInstitucion: req.body.idInstitucion,
         NroBotellas: req.body.NroBotellas,
