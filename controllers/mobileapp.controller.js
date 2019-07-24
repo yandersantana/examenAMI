@@ -27,9 +27,9 @@ mobileAppCtrl.getUsuarioData = async (req, res, next) => {
 };
 //la puta madre
 mobileAppCtrl.getMatriculaData = async (req, res, next) => {
-    //const { matricula } = req.params;
+    const { id } = req.params;
     //const usuarioData = await Usuario.findOne({where: {idInstitucion:matricula}, select: ['nroBotellas', 'saldoTotal','saldoActual']});
-    const usuarioData = await Usuario.find({ user: 'admin2' }).select({ NroBotellas: 1, saldoTotal: 1, saldoActual: 1 });
+    const usuarioData = await Usuario.find({ 'user': id}).select({ NroBotellas: 1, saldoTotal: 1, saldoActual: 1 });
  //const personaData = await Persona.findOne({where: {idInstitucion:matricula}, select: ['nombre', 'apellido']});
  //const personaData = await Persona.find({ 'idInstitucion': matricula }).select({ nombre: 1, apellido: 1});
     //res.json({nombre:personaData.nombre, apellido:personaData.apellido, nroBotellas:usuarioData.nroBotellas, saldoTotal:usuarioData.saldoTotal});
