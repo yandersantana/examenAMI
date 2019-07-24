@@ -34,7 +34,7 @@ mobileAppCtrl.getMatriculaData = async (req, res, next) => {
  const personaData = await Persona.find({ 'idInstitucion': id }).select({ nombre: 1, apellido: 1});
     //res.json({nombre:personaData.nombre, apellido:personaData.apellido, nroBotellas:usuarioData.nroBotellas, saldoTotal:usuarioData.saldoTotal});
     
-    const dataFinal= let [usuarioData, personaData] = await Promise.all([usuarioData(), personaData()]);
+    const dataFinal= [await usuarioData, await personaData];
     
     console.log(dataFinal);
     res.json(dataFinal);
