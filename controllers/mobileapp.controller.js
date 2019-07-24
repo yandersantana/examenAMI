@@ -20,7 +20,7 @@ mobileAppCtrl.getUsuarioData = async (req, res, next) => {
 
     console.log(usuarioData.id)
     //res.send({dataUsuario});
-    res.json(usuarioData);
+    res.json(usuarioData.NroBotellas);
     //res.json(usuarioData.user, usuarioData.nroBotellas, usuarioData.saldoTotal, usuarioData.saldoActual);
 
 
