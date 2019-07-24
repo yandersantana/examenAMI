@@ -33,6 +33,7 @@ mobileAppCtrl.getMatriculaData = async (req, res, next) => {
  //const personaData = await Persona.findOne({where: {idInstitucion:matricula}, select: ['nombre', 'apellido']});
  const personaData = await Persona.find({ 'idInstitucion': id }).select({ nombre: 1, apellido: 1});
     //res.json({nombre:personaData.nombre, apellido:personaData.apellido, nroBotellas:usuarioData.nroBotellas, saldoTotal:usuarioData.saldoTotal});
+    console.log(id);
     res.json(personaData);
 };
 
