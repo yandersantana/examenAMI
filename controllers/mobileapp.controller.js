@@ -18,7 +18,7 @@ mobileAppCtrl.getUsuarioData = async (req, res, next) => {
         saldoActual:usuarioData.saldoActual
     }
 
-    console.log(usuarioData.id)
+    //console.log(usuarioData.id)
     //res.send({dataUsuario});
     res.json(usuarioData);
     //res.json(usuarioData.user, usuarioData.nroBotellas, usuarioData.saldoTotal, usuarioData.saldoActual);
@@ -33,7 +33,7 @@ mobileAppCtrl.getMatriculaData = async (req, res, next) => {
  //const personaData = await Persona.findOne({where: {idInstitucion:matricula}, select: ['nombre', 'apellido']});
  const personaData = await Persona.findOne({ 'idInstitucion': id });
     //res.json({nombre:personaData.nombre, apellido:personaData.apellido, nroBotellas:usuarioData.nroBotellas, saldoTotal:usuarioData.saldoTotal});
-    res.json(personaData.nombre, personaData.apellido, usuarioData.nroBotellas, usuarioData.saldoTotal);
+    res.json(personaData.nombre, personaData.apellido, usuarioData.NroBotellas, usuarioData.saldoTotal);
 };
 
 //mobileAppCtrl.getSaldoResponse = async (req, res, next) => {
