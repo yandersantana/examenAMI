@@ -2,7 +2,7 @@ const Usuario = require('../models/usuario');
 const Persona = require('../models/persona');
 
 const mobileAppCtrl = {};
-
+const mobileAppCtrl2={};
 mobileAppCtrl.getUsuarioData = async (req, res, next) => {
     
     const { id } = req.params;
@@ -26,7 +26,7 @@ mobileAppCtrl.getUsuarioData = async (req, res, next) => {
 
 };
 //la puta madre
-mobileAppCtrl.getMatriculaData = async (req, res, next) => {
+mobileAppCtrl2.getMatriculaData = async (req, res, next) => {
     const { matricula } = req.params;
     //const usuarioData = await Usuario.findOne({where: {idInstitucion:matricula}, select: ['nroBotellas', 'saldoTotal','saldoActual']});
     const usuarioData = await Usuario.find({ 'user': matricula }).select({ idInstitucion: 1, NroBotellas: 1, saldoTotal: 1, saldoActual: 1 });
@@ -45,3 +45,4 @@ mobileAppCtrl.getMatriculaData = async (req, res, next) => {
 
 
 module.exports = mobileAppCtrl;
+module.exports= mobileAppCtrl2;
