@@ -9,7 +9,7 @@ mobileAppCtrl.getUsuarioData = async (req, res, next) => {
     const usuarioData = await Usuario.findOne({where: {name:'user'}, select: ['nroBotellas', 'saldoTotal','saldoActual']});
     res.json(usuarioData);
 };
-
+//la puta madre
 mobileAppCtrl.getMatriculaData = async (req, res, next) => {
     const { id } = req.params;
     const usuarioData = await Usuario.findOne({where: {idInstitucion:matricula}, select: ['nroBotellas', 'saldoTotal','saldoActual']});
