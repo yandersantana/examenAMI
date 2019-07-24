@@ -7,11 +7,13 @@ import { NgModule } from '@angular/core';
 // Components
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './components/employee/employee.component';
+import { RolComponent } from './components/rol/rol.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    RolComponent
   ],
   imports: [
     BrowserModule,

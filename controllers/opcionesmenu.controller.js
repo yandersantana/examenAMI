@@ -2,13 +2,15 @@ const Opcionesmenu = require('../models/opcionesMenu');
 
 const OpcionesmenuCtrl = {};
 
-OpcionesmenuCtrl.getEmployees = async (req, res, next) => {
+OpcionesmenuCtrl.getOpcionesmenus = async (req, res, next) => {
     const opciones = await Opcionesmenu.find();
     res.json(opciones);
 };
 
 OpcionesmenuCtrl.createOpcionesmenu = async (req, res, next) => {
     const opciones = new Opcionesmenu({
+        idOpcionMenu: req.body.idOpcionMenu,
+        idMenu:req.body.idMenu,
         url: req.body.url
     });
     await opciones.save();
@@ -24,6 +26,8 @@ OpcionesmenuCtrl.getOpcionesmenu = async (req, res, next) => {
 OpcionesmenuCtrl.editOpcionesmenu = async (req, res, next) => {
     const { id } = req.params;
     const opciones = {
+        idOpcionMenu:req.body.idOpcionMenu,
+        idMenu:req.body.idMenu,
         url: req.body.url
     };
     await Opcionesmenu.findByIdAndUpdate(id, {$set: opciones}, {new: true});
