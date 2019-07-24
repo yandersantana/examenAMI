@@ -33,14 +33,15 @@ usuarioCtrl.getUsuario = async (req, res, next) => {
 usuarioCtrl.editUsuario = async (req, res, next) => {
     const { id } = req.params;
     const usuario = {
+        
         idPersona: req.body.idPersona,
         idLogro: req.body.idLogros,
         idRol: req.body.idRol,
         idInstitucion: req.body.idInstitucion,
-        nroBotellas: req.body.NroBotellas,
+        NroBotellas: req.body.NroBotellas,
         saldoActual: req.body.saldoActual,
         saldoTotal: req.body.saldoTotal,
-        urlFoto: req.body.urlFoto,
+        UrlFoto: req.body.UrlFoto,
         user: req.body.user,
         password: req.body.password
     };
