@@ -5,7 +5,7 @@ const mobileapp = require('../controllers/mobileapp.controller');
 
 router.get('/:id', mobileapp.getUsuarioData);
 //router.post('/', mobileapp.createUsuario);
-router.get('data/:matricula', mobileapp.getMatriculaData);
+router.get('/data/:matricula', mobileapp.getMatriculaData);
 
 //router.put('/:id', mobileapp.editUsuario);
 
