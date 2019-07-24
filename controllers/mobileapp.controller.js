@@ -44,5 +44,4 @@ mobileAppCtrl2.getMatriculaData = async (req, res, next) => {
 //};
 
 
-module.exports = mobileAppCtrl;
-module.exports= mobileAppCtrl2;
+module.exports = mobileAppCtrl,mobileAppCtrl2;
