@@ -59,6 +59,7 @@ app.use('/api/roles', require('./routes/rol.routes'));
 app.use('/api/eventos', require('./routes/evento.routes'));
 app.use('/api/instituciones', require('./routes/institucion.routes'));
 app.use('/api/opcionesmenu', require('./routes/opcionesmenu.routes'));
+app.use('/api/movilapp', require('./routes/mobileapp.routes'));
 
 
 
