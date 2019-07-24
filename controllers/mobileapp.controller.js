@@ -6,12 +6,12 @@ const mobileAppCtrl = {};
 mobileAppCtrl.getUsuarioData = async (req, res, next) => {
     const { user } = req.params;
     //const usuario = await Usuario.findById(id);
-    const usuarioData = await Usuario.findOne({where: {name:user}, select: ['nroBotellas', 'saldoTotal','saldoActual']});
+    const usuarioData = await Usuario.findOne({where: {name:'user'}, select: ['nroBotellas', 'saldoTotal','saldoActual']});
     res.json(usuarioData);
 };
 
 mobileAppCtrl.getMatriculaData = async (req, res, next) => {
-    const { matricula } = req.params;
+    const { id } = req.params;
     const usuarioData = await Usuario.findOne({where: {idInstitucion:matricula}, select: ['nroBotellas', 'saldoTotal','saldoActual']});
 
  const personaData = await Persona.findOne({where: {idInstitucion:matricula}, select: ['nombre', 'apellido']});
