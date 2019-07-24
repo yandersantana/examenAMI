@@ -8,7 +8,7 @@ const router = express.Router(); // rutas primera version
 const propierties = require('./config/propierties'); // propiedades de la base
 const DB =require('./config/db') //url de la base 
 
-const { mongoose } = require('./database');
+//const { mongoose } = require('./db');
 var path = require('path')
 
 //instancia base
