@@ -16,7 +16,7 @@ export class RolComponent implements OnInit {
   constructor(public rolService: RolService) { }
 
   ngOnInit() {
-    this.getRols;
+    this.getRols();
   }
 
   addRol(form?: NgForm) {

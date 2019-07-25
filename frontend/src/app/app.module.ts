@@ -4,21 +4,39 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 
+import { RouterModule } from '@angular/router';
+
 // Components
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { RolComponent } from './components/rol/rol.component';
+import { OpcionesmenusComponent } from './components/opcionesmenus/opcionesmenus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
-    RolComponent
+    RolComponent,
+    OpcionesmenusComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {
+        path: 'admin/employees',
+        component:EmployeeComponent
+      },
+      {
+        path: 'admin/roles',
+        component:RolComponent
+      },
+      {
+        path: 'admin/opcionesmenu',
+        component:OpcionesmenusComponent
+      },      
+    ])    
   ],
   providers: [],
   bootstrap: [AppComponent]
