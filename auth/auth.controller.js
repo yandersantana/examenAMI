@@ -1,12 +1,13 @@
-const User =require('./auth.dao')
+const Usuario =require('./auth.dao')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const SECRET_KEY ='secretkey94'
 
+
 exports.createUser =(req,res,next)=>{
     const newUser={
-        name:req.body.name,
-        email:req.body.email,
+        user:req.body.user,
+        
         //password:req.body.passwordwoocommerce_after_shop_loop_item
         password: bcrypt.hashSync(req.body.password)
     }
@@ -19,8 +20,7 @@ exports.createUser =(req,res,next)=>{
                 expiresIn:expiresIn
             });
             const dataUser={
-                name:user.name,
-                email:user.email,
+                user:user.user,
                 accesToken:accesToken,
                 expiresIn:expiresIn
             }
@@ -34,10 +34,10 @@ exports.createUser =(req,res,next)=>{
 
 exports.loginUser =(req,res,next)=>{
     const userData ={
-        email : req.body.email,
+        user: req.body.user,
         password:req.body.password
     }
-User.findOne({email:userData.email},(err,user)=>{
+User.findOne({user:userData.user},(err,user)=>{
     if(err)return res.status(500).send('error en servidor');
     if (!user){
         //email does not exist
@@ -52,15 +52,14 @@ User.findOne({email:userData.email},(err,user)=>{
             }); 
 
             const dataUser={
-                name:user.name,
-                email:user.email,
+                user:user.user,
                 accesToken:accesToken,
                 expiresIn:expiresIn
             }
             res.send({dataUser})
         } else{
             //paswword wrong
-            res.status(409).send({message:"estamal tu huevada"});
+            res.status(409).send({message:"error de password"});
         }
     }
 })
