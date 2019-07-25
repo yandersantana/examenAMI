@@ -46,5 +46,35 @@ mobileAppCtrl.getMatriculaData = async (req, res, next) => {
 //    res.json(usuarioData);
 //};
 
+mobileAppCtrl.restarSaldo = async (req, res, next) => {
+    const { id } = req.params;
+    //const usuario = await Usuario.findById(id);
+    //{ 'username': userName }
+    //const usuarioData = await Usuario.find({where: {'user':id}, select: ['NroBotellas', 'saldoTotal','saldoActual']});
+    //const usuarioData = await Usuario.find({ 'user': id });
+    console.log("ingresa resta saldo");
+    console.log(id);
+
+    const usuarioData = await Usuario.find({ 'idInstitucion': id });
+    const usuarioid = await Usuario.find({'idInstitucion':id}).select({ id:1});
+
+
+   // const restaTotal = parseFloat(usuarioData.saldoTotal)-0.30;
+    //const restaActual = parseFloat(usuarioData.saldoTotal)-0.30;
+
+    //usuarioData.saldoTotal = parseString(restaTotal);
+    //.saldoActual = parseString(restaActual);
+   
+    //console.log(usuarioid.id);
+    //res.send({dataUsuario});
+
+    //res.json(usuarioData.user, usuarioData.nroBotellas, usuarioData.saldoTotal, usuarioData.saldoActual);
+    await Usuario.findByIdAndUpdate(usuarioid.id, {$set: usuarioData}, {new: true});
+  //  await Usuario.findByIdAndUpdate(user, {$set: usuarioData}, {new: true});
+    res.json({status: 'Saldo Updated'});
+    //res.send({dataUsuario});
+
+};
+
 
 module.exports = mobileAppCtrl;
