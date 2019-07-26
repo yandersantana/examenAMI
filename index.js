@@ -25,9 +25,9 @@ app.use(bodyParseJson)
 app.use(bodyParserURLEncoded)
 app.use('/api',router)
 authRoutes(router)
-router.get('/',(req,res)=>{
-    res.send("hello")
-}) //rama home prueba pero ya no sirve por el dist
+//router.get('/',(req,res)=>{
+ //   res.send("hello")
+//}) //rama home prueba pero ya no sirve por el dist
 
 app.use(router)
 
