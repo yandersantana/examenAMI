@@ -1,6 +1,6 @@
 const mongoose = require ('mongoose')
 const Schema = mongoose.Schema;
-const Usuario = require('../../models/usuario')
+const User= require('../../models/usuario')
 mongoose.set('useCreateIndex',true) //solucionar advertencia por consola
 const userSchema = new Schema({
     user:{
