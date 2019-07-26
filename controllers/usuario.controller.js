@@ -1,6 +1,7 @@
 const Usuario = require('../models/usuario');
-mongoose.set('useCreateIndex',true)
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+
+mongoose.set('useCreateIndex',true);
 
 const usuarioCtrl = {};
 
@@ -21,7 +22,8 @@ usuarioCtrl.createUsuario = async (req, res, next) => {
         UrlFoto: req.body.UrlFoto,
         user: req.body.user,
       //  password: req.body.password
-        password:bcrypt.hashSync(req.body.password)
+        password: bcrypt.hashSync(req.body.password),
+        email: req.body.email
     });
     await usuario.save();
     res.json({status: 'Usuario created'});
@@ -47,7 +49,8 @@ usuarioCtrl.editUsuario = async (req, res, next) => {
         UrlFoto: req.body.UrlFoto,
         user: req.body.user,
        // password: req.body.password
-        password:bcrypt.hashSync(req.body.password)
+        password:bcrypt.hashSync(req.body.password),
+        email:req.body.email
     };
     await Usuario.findByIdAndUpdate(id, {$set: usuario}, {new: true});
     res.json({status: 'Usuario Updated'});

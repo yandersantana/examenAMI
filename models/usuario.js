@@ -12,7 +12,8 @@ const usuarioSchema = new Schema({
     saldoTotal:{type:Number,required:false},
     Urlfoto:{type:String,required:false},
     user:{type:String,required:false},
-    password:{type:String,required:false}
+    password:{type:String,required:false},
+    email:{type:String,required:true,trim:true}
 
 },
 {
