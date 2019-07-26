@@ -1,12 +1,10 @@
-const User =require('../models/usuario')
+const User =require('../models/auth.dao')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const SECRET_KEY ='secretkey94'
 
 
-const authCrtl={};
-
-authCrtl.createUser = async (req,res,next)=>{
+exports.createUser =(req,res,next)=>{
     const newUser={
         //user:req.body.user,
         email:req.body.email,
@@ -30,21 +28,17 @@ authCrtl.createUser = async (req,res,next)=>{
 
          //response
          //res.send({user});
-         
          res.send({dataUser});
 
     })
-    await newUser.save();
-         res.json({status:'Usuario Registrado'})
 }
 
-authCrtl.loginUser = async(req,res,next)=>{
+exports.loginUser =(req,res,next)=>{
     const userData ={
         email: req.body.email,
         password:req.body.password
     }
-    console.log(userData)
-const Userlog = await Usuario.findOne({user:userData.user},(err,user)=>{
+User.findOne({user:userData.user},(err,user)=>{
     if(err)return res.status(500).send('error en servidor');
     if (!user){
         //email does not exist
@@ -63,17 +57,12 @@ const Userlog = await Usuario.findOne({user:userData.user},(err,user)=>{
                 accesToken:accesToken,
                 expiresIn:expiresIn
             }
-            
             res.send({dataUser})
-            res.json({status: 'Bienvenido Usuario'});
         } else{
             //paswword wrong
             res.status(409).send({message:"error de password"});
         }
     }
-await Userlog.save()
-}
-)
+})
 }
 
-module.exports= authCrtl;
