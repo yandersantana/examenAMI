@@ -31,10 +31,10 @@ authCrtl.createUser = async (req,res,next)=>{
          //response
          //res.send({user});
          
+         res.send({dataUser});
 
     })
     await newUser.save();
-         res.send({dataUser});
          res.json({status:'Usuario Registrado'})
 }
 
