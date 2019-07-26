@@ -13,7 +13,7 @@ authCrtl.createUser = async (req,res,next)=>{
         //password:req.body.password
         password: bcrypt.hashSync(req.body.password)
     }
-    User.create(newUser,(err,user)=>{
+    authCrtl.create(newUser,(err,user)=>{
       //  if(err & err.code ===11000) return res.status(409).send('el email ya existe')
       //if(err & err.code ===11000) return res.status(409).send('el email ya existe')
         if(err)return res.status(500).send('server error');
@@ -30,11 +30,12 @@ authCrtl.createUser = async (req,res,next)=>{
 
          //response
          //res.send({user});
-         await newUser.save();
-         res.send({dataUser});
-         res.json({status:'Usuario Registrado'})
+         
 
     })
+    await newUser.save();
+         res.send({dataUser});
+         res.json({status:'Usuario Registrado'})
 }
 
 authCrtl.loginUser = async(req,res,next)=>{
