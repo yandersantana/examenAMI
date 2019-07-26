@@ -1,4 +1,4 @@
-const User =require('./auth.dao')
+const User =require('../models/auth.dao')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const SECRET_KEY ='secretkey94'
