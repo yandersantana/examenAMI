@@ -1,7 +1,7 @@
 const Usuario = require('../models/usuario');
 const bcrypt = require('bcryptjs');
 
-mongoose.set('useCreateIndex',true);
+//mongoose.set('useCreateIndex',true);
 
 const usuarioCtrl = {};
 
