@@ -4,6 +4,11 @@ const bcrypt = require('bcryptjs')
 const SECRET_KEY ='secretkey94'
 
 
+exports.getUsers= async(req,res,next)=>{
+    const Users = await User.find();
+    res.json(Users);
+}
+
 exports.createUser =(req,res,next)=>{
     const newUser={
         //user:req.body.user,
