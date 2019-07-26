@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
-
+//const { Schema } = mongoose;
+const Schema = mongoose.Schema;
+mongoose.set('useCreateIndex',true)
 const usuarioSchema = new Schema({
     idUser: { type: String, required: false},
     idPersona: { type: String, required: false },
@@ -22,4 +23,5 @@ const usuarioSchema = new Schema({
 
 );
 
-module.exports = mongoose.model('Usuario', usuarioSchema);
+module.exports=usuarioSchema;
+//module.exports = mongoose.model('Usuario', usuarioSchema);
