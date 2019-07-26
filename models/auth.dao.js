@@ -13,7 +13,7 @@ authSchema.statics={
     }
 }
 
-const authModel = mongoose.model('Users',authSchema);
+const authModel = mongoose.model('Usuario',authSchema);
 
 //const authModel = mongoose.model('Usuario',authSchema);
 module.exports= authModel;
