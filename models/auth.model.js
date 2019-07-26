@@ -11,11 +11,6 @@ const userSchema = new Schema({
       type:String,
       required:true,
       trim:true
-    },
-    idRol:{
-        type:String,
-        require:true,
-        trim:true
     }
 },{
     timestamps:true

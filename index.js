@@ -1,6 +1,6 @@
 'use strict'
 
-const authRoutes = require('./auth/auth.routes')
+//const authRoutes = require('./auth/auth.routes')
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -60,6 +60,8 @@ app.use('/api/eventos', require('./routes/evento.routes'));
 app.use('/api/instituciones', require('./routes/institucion.routes'));
 app.use('/api/opcionesmenu', require('./routes/opcionesmenu.routes'));
 app.use('/api/mobilapp', require('./routes/mobileapp.routes'));
+app.use('/login',require('./routes/auth.routes'));
+app.use('/register',require('./routes/auth.routes'));
 
 
 

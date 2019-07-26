@@ -7,7 +7,6 @@ const SECRET_KEY ='secretkey94'
 exports.createUser =(req,res,next)=>{
     const newUser={
         user:req.body.user,
-        
         //password:req.body.passwordwoocommerce_after_shop_loop_item
         password: bcrypt.hashSync(req.body.password)
     }
