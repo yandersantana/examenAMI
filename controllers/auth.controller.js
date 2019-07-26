@@ -13,7 +13,7 @@ authCrtl.createUser = async (req,res,next)=>{
         //password:req.body.password
         password: bcrypt.hashSync(req.body.password)
     }
-    authCrtl.create(newUser,(err,user)=>{
+    User.create(newUser,(err,user)=>{
       //  if(err & err.code ===11000) return res.status(409).send('el email ya existe')
       //if(err & err.code ===11000) return res.status(409).send('el email ya existe')
         if(err)return res.status(500).send('server error');
@@ -43,7 +43,8 @@ authCrtl.loginUser = async(req,res,next)=>{
         email: req.body.email,
         password:req.body.password
     }
-await Usuario.findOne({user:userData.user},(err,user)=>{
+    console.log(userData)
+const Userlog = await Usuario.findOne({user:userData.user},(err,user)=>{
     if(err)return res.status(500).send('error en servidor');
     if (!user){
         //email does not exist
@@ -70,7 +71,7 @@ await Usuario.findOne({user:userData.user},(err,user)=>{
             res.status(409).send({message:"error de password"});
         }
     }
-
+await Userlog.save()
 }
 )
 }
