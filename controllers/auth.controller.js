@@ -6,8 +6,9 @@ const SECRET_KEY ='secretkey94'
 
 exports.createUser =(req,res,next)=>{
     const newUser={
-        user:req.body.user,
-        //password:req.body.passwordwoocommerce_after_shop_loop_item
+        //user:req.body.user,
+        email:req.body.email,
+        //password:req.body.password
         password: bcrypt.hashSync(req.body.password)
     }
     User.create(newUser,(err,user)=>{
@@ -19,7 +20,7 @@ exports.createUser =(req,res,next)=>{
                 expiresIn:expiresIn
             });
             const dataUser={
-                user:user.user,
+                email:user.email,
                 accesToken:accesToken,
                 expiresIn:expiresIn
             }
@@ -33,7 +34,7 @@ exports.createUser =(req,res,next)=>{
 
 exports.loginUser =(req,res,next)=>{
     const userData ={
-        user: req.body.user,
+        email: req.body.email,
         password:req.body.password
     }
 User.findOne({user:userData.user},(err,user)=>{
@@ -51,7 +52,7 @@ User.findOne({user:userData.user},(err,user)=>{
             }); 
 
             const dataUser={
-                user:user.user,
+                email:user.email,
                 accesToken:accesToken,
                 expiresIn:expiresIn
             }
