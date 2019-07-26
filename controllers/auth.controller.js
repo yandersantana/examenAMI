@@ -12,7 +12,8 @@ exports.createUser =(req,res,next)=>{
         password: bcrypt.hashSync(req.body.password)
     }
     User.create(newUser,(err,user)=>{
-        if(err & err.code ===11000) return res.status(409).send('el email ya existe')
+      //  if(err & err.code ===11000) return res.status(409).send('el email ya existe')
+      if(err & err.code ===11000) return res.status(409).send('el email ya existe')
         if(err)return res.status(500).send('server error');
         const expiresIn = 24*60*60;
         const accesToken = jwt.sign({id:user.id},
