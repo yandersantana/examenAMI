@@ -14,7 +14,7 @@ eventoCtrl.createEvento = async (req, res, next) => {
         descripcion: req.body.descripcion,
         fechainicio: req.body.fechainicio,
         fechafin: req.body.fechafin,
-        urlFoto: req.body.urlFoto,
+        urlfoto: req.body.urlfoto,
         premios: req.body.premios,
     });
     await evento.save();
@@ -35,7 +35,7 @@ eventoCtrl.editEvento = async (req, res, next) => {
         descripcion: req.body.descripcion,
         fechainicio: req.body.fechainicio,
         fechafin: req.body.fechafin,
-        urlFoto: req.body.urlFoto,
+        urlfoto: req.body.urlfoto,
         premios: req.body.premios,
     };
     await Evento.findByIdAndUpdate(id, {$set: evento}, {new: true});

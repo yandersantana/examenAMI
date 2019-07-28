@@ -1,4 +1,4 @@
-export class Opcionesmenu {
+export class OpcionesMenu {
 
    constructor(_id = '', idOpcionMenu = '', idMenu = '', url = '') {
         this._id = _id;

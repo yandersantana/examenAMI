@@ -1,7 +1,7 @@
 import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { OpcionesmenuService } from '../../services/opcionesmenu.service';
-import { Opcionesmenu } from '../../models/opcionesmenu';
+import { OpcionesMenu } from '../../models/opcionesmenu';
 
 declare var M: any;
 
@@ -43,11 +43,11 @@ export class OpcionesmenusComponent implements OnInit {
   getOpcionesmenus() {
     this.opcionesmenuService.getOpcionesmenus()
       .subscribe(res => {
-        this.opcionesmenuService.opcionesMenu = res as Opcionesmenu[];
+        this.opcionesmenuService.opcionesMenu = res as OpcionesMenu[];
       });
   }
 
-  editOpcionesmenu(opcionesmenu: Opcionesmenu) {
+  editOpcionesmenu(opcionesmenu: OpcionesMenu) {
     this.opcionesmenuService.selectedOpcionesmenu = opcionesmenu;
   }
 
@@ -65,7 +65,7 @@ export class OpcionesmenusComponent implements OnInit {
   resetForm(form?: NgForm) {
     if (form) {
       form.reset();
-      this.opcionesmenuService.selectedOpcionesmenu = new Opcionesmenu();
+      this.opcionesmenuService.selectedOpcionesmenu = new OpcionesMenu();
     }
   }
 

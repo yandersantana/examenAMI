@@ -4,7 +4,7 @@
     <div class="col s5">
       <div class="card">
         <div class="card-content">
-          <form #employeeForm="ngForm" (ngSubmit)="addOpcionesmenu(opcionesmenuForm)">
+          <form #opcionesmenuForm="ngForm" (ngSubmit)="addOpcionesmenu(opcionesmenuForm)">
             <input type="hidden" name="_id" #_id="ngModel" 
             [(ngModel)]="opcionesmenuService.selectedOpcionesmenu._id">
             <div class="row">
@@ -40,7 +40,7 @@
           <th>Operations</th>
         </thead>
         <tbody>
-          <tr *ngFor="let opcionesmenu of opcionesmenuService.opcionesmenus">
+          <tr *ngFor="let opcionesmenu of opcionesmenuService.opcionesMenu">
             <td>{{ opcionesmenu.idOpcionMenu }}</td>
             <td>{{ opcionesmenu.idMenu }}</td>
             <td>{{ opcionesmenu.url }}</td>
