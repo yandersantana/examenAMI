@@ -9,7 +9,8 @@ parametroCtrl.getParametros = async (req, res, next) => {
 
 parametroCtrl.createParametro = async (req, res, next) => {
     const parametro = new Parametro({
-        nombreparametro: req.body.nombreparametro,
+        idParametro:req.body.idParametro,
+        nombreParametro: req.body.nombreParametro,
         valor: req.body.valor
        
     });
@@ -26,7 +27,8 @@ parametroCtrl.getParametro = async (req, res, next) => {
 parametroCtrl.editParametro = async (req, res, next) => {
     const { id } = req.params;
     const parametro = {
-        nombreparametro: req.body.nombreparametro,
+        idParametro:req.body.idParametro,
+        nombreParametro: req.body.nombreParametro,
         valor: req.body.valor
       
     };
