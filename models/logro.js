@@ -11,4 +11,4 @@ const logroSchema = new Schema({
    
 });
 
-module.exports = mongoose.model('logro', logroSchema);
+module.exports = mongoose.model('Logro', logroSchema);

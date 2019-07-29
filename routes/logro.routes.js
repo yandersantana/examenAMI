@@ -3,10 +3,10 @@ const router = express.Router();
 
 const logro = require('../controllers/logro.controller');
 
-router.get('/', logro.getlogros);
-router.post('/', logro.createlogro);
-router.get('/:id', logro.getlogro);
-router.put('/:id', logro.editlogro);
-router.delete('/:id', logro.deletelogro);
+router.get('/', logro.getLogros);
+router.post('/', logro.createLogro);
+router.get('/:id', logro.getLogro);
+router.put('/:id', logro.editLogro);
+router.delete('/:id', logro.deleteLogro);
 
 module.exports = router;
