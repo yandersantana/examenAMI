@@ -60,7 +60,7 @@ app.use('/api/eventos', require('./routes/evento.routes'));
 app.use('/api/instituciones', require('./routes/institucion.routes'));
 app.use('/api/opcionesmenu', require('./routes/opcionesmenu.routes'));
 app.use('/api/mobilapp', require('./routes/mobileapp.routes'));
-app.use('/api/logros',require('./routes/logro.routes'));
+app.use('/api/logros', require('./routes/logro.routes'));
 //app.use('/api/register',require('./routes/auth.routes'));
 //app.use('/api/login',require('./routes/auth.routes'));
 
