@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const opcionesMenuSchema = new Schema({
+const logroSchema = new Schema({
     idLogro: { type: String, required: false},
     nombre: { type: String, required: false },
     descripcion: { type: String, required: false },
@@ -11,4 +11,4 @@ const opcionesMenuSchema = new Schema({
    
 });
 
-module.exports = mongoose.model('OpcionesMenu', opcionesMenuSchema);
+module.exports = mongoose.model('logro', logroSchema);
