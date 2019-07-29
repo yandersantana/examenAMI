@@ -24,7 +24,7 @@ export class menuComponent implements OnInit {
       this.menuService.putmenu(form.value)
         .subscribe(res => {
           this.resetForm(form);
-          this.getOpcionesmenus();
+          this.getmenus();
           M.toast({html: 'actualizado'});
         });
     } else {
