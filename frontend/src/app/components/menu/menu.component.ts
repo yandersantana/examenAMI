@@ -15,7 +15,7 @@ export class menuComponent implements OnInit {
   constructor(public menuService: menuService) { }
 
   ngOnInit() {
-    this.getmenu();
+    this.getMenus();
   }
 
   addmenu(form?: NgForm){    
@@ -24,15 +24,15 @@ export class menuComponent implements OnInit {
       this.menuService.putmenu(form.value)
         .subscribe(res => {
           this.resetForm(form);
-          this.getmenu();
+          this.getOpcionesmenus();
           M.toast({html: 'actualizado'});
         });
     } else {
       this.menuService.postmenu(form.value)
       .subscribe(res => {
-        this.getOpcionesmenus();
+        this.getmenus();
         this.resetForm(form);
-        M.toast({html: 'Opcionesmenu Guardado'});
+        M.toast({html: 'menu Guardado'});
       });
     }
     
@@ -40,22 +40,22 @@ export class menuComponent implements OnInit {
 
 
 
-  getOpcionesmenus() {
+  getmenus() {
     this.menuService.getmenu()
       .subscribe(res => {
         this.menuService.Menu = res as Menu[];
       });
   }
 
-  editOpcionesmenu(menu: Menu) {
+  editmenu(menu: Menu) {
     this.menuService.selectedmenu = menu;
   }
 
-  deleteOpcionesmenu(_id: string, form: NgForm) {
+  deletemenu(_id: string, form: NgForm) {
     if(confirm('¿Esta seguro de eliminar?')) {
       this.menuService.deletemenu(_id)
         .subscribe(res => {
-          this.getmenu();
+          this.getmenus();
           this.resetForm(form);
           M.toast({html: 'Eiminado'});
         });
