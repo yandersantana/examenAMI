@@ -8,7 +8,7 @@ logroCtrl.getlogros = async (req, res, next) => {
 };
 
 logroCtrl.createLogro = async (req, res, next) => {
-    const logro = new logro({
+    const logro = new Logro({
         idLogro: req.body.idLogro,
         nombre: req.body.nombre,
         descripcion: req.body.descripcion,
