@@ -15,7 +15,7 @@ export class menuComponent implements OnInit {
   constructor(public menuService: menuService) { }
 
   ngOnInit() {
-    this.getMenus();
+    this.getmenus();
   }
 
   addmenu(form?: NgForm){    
