@@ -1,4 +1,4 @@
-const Producto = require('../models/pedido');
+const Producto = require('../models/producto');
 
 const productoCtrl = {};
 
