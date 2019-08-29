@@ -38,8 +38,8 @@ app.set('port', process.env.PORT || 3000);
 
 // Middlewares
 app.use('/',express.static('client',{redirect:false}));
-app.use(cors({origin: 'http://162.212.130.145'}));
-//app.use(cors({origin: 'http://localhost:4200'}));
+//app.use(cors({origin: 'http://162.212.130.145'}));
+app.use(cors({origin: 'http://localhost:4200'}));
 
 app.use(function (req, res, next) {
 
@@ -50,21 +50,29 @@ app.use(function (req, res, next) {
 app.use(express.json());
 
 // Routes
-app.use('/api/employees', require('./routes/employee.routes'));
-app.use('/api/usuarios', require('./routes/usuario.routes'));
-app.use('/api/personas', require('./routes/persona.routes'));
-app.use('/api/parametros', require('./routes/parametro.routes'));
-app.use('/api/reportes', require('./routes/reporte.routes'));
-app.use('/api/roles', require('./routes/rol.routes'));
-app.use('/api/eventos', require('./routes/evento.routes'));
-app.use('/api/instituciones', require('./routes/institucion.routes'));
-app.use('/api/opcionesmenu', require('./routes/opcionesmenu.routes'));
-app.use('/api/menus', require('./routes/menu.routes'));
-app.use('/api/mobilapp', require('./routes/mobileapp.routes'));
-app.use('/api/logros', require('./routes/logro.routes'));
+//app.use('/api/employees', require('./routes/employee.routes'));
+//app.use('/api/usuarios', require('./routes/usuario.routes'));
+//app.use('/api/personas', require('./routes/persona.routes'));
+//app.use('/api/parametros', require('./routes/parametro.routes'));
+//app.use('/api/reportes', require('./routes/reporte.routes'));
+//app.use('/api/roles', require('./routes/rol.routes'));
+//app.use('/api/eventos', require('./routes/evento.routes'));
+//app.use('/api/animales', require('./routes/animales.routes'));
+
+//app.use('/api/instituciones', require('./routes/institucion.routes'));
+//app.use('/api/opcionesmenu', require('./routes/opcionesmenu.routes'));
+//app.use('/api/menus', require('./routes/menu.routes'));
+//app.use('/api/mobilapp', require('./routes/mobileapp.routes'));
+//app.use('/api/logros', require('./routes/logro.routes'));
 //app.use('/api/register',require('./routes/auth.routes'));
 //app.use('/api/login',require('./routes/auth.routes'));
 
+
+
+
+app.use('/api/clientes', require('./routes/cliente.routes'));
+app.use('/api/pedido', require('./routes/pedido.routes'));
+app.use('/api/productos', require('./routes/producto.routes'));
 
 
 //starting the server
